@@ -11,18 +11,17 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000/api/v1", // sesuaikan dengan base url kamu
+        url: "http://localhost:3000/api/v1",
       },
     ],
   },
-  apis: ["./routes/*.js"], // lokasi file route kamu
+  apis: ["./routes/*.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
 
 function swaggerDocs(app, port) {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  console.log(`📖 Dokumentasi tersedia di http://localhost:${port}/api-docs`);
 }
 
 module.exports = swaggerDocs;
