@@ -166,3 +166,15 @@ http://localhost:3000/api-docs
 ## Tech Stack
 - **Node.js** + **Express.js** – Backend Framework
 - **MongoDB** + **Mongoose** – Database
+
+---
+
+## Link Deploy
+
+```
+https://minilemon-backend-skill-test.vercel.app/api/v1/
+```
+Dokumentasi swagger (ui tidak dapat load di vercel)
+```
+https://minilemon-backend-skill-test.vercel.app/api-docs.json
+```
