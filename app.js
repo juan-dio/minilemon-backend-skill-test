@@ -6,6 +6,8 @@ const cors = require('cors');
 
 dotenv.config();
 
+const { port } = require('./config/keys');
+const swaggerDocs = require("./swagger");
 const connectMongodb = require('./init/mongodb');
 const { errorHandler } = require('./middleware');
 const { notFound } = require('./controllers');
@@ -23,7 +25,10 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 app.use(morgan('dev')); // log requests to console
 
 // routes
-app.use('/api/v1/user', userRoute);
+app.use('/api/v1/users', userRoute);
+
+// swagger documentation
+swaggerDocs(app, port);
 
 // not found route
 app.use('*endpoint', notFound);
