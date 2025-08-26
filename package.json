@@ -1,0 +1,20 @@
+{
+  "name": "minilemon-backend-skill-test",
+  "version": "1.0.0",
+  "description": "Skill Test Magang Minilemon Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Juan Dio",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.18.0",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10"
+  }
+}
