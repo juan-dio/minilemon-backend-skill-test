@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
@@ -29,6 +30,8 @@ app.use('/api/v1/users', userRoute);
 
 // swagger documentation
 swaggerDocs(app, port);
+
+app.use('/api-docs-static', express.static(path.join(__dirname, '../node_modules/swagger-ui-dist')));
 
 // not found route
 app.use('*endpoint', notFound);
