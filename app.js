@@ -1,9 +1,9 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const cors = require('cors');
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
 
 dotenv.config();
 
@@ -24,14 +24,13 @@ connectMongodb();
 app.use(express.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 app.use(morgan('dev')); // log requests to console
+app.use(express.static(pathToSwaggerUi))
 
 // routes
 app.use('/api/v1/users', userRoute);
 
 // swagger documentation
 swaggerDocs(app, port);
-
-app.use('/api-docs-static', express.static(path.join(__dirname, '../node_modules/swagger-ui-dist')));
 
 // not found route
 app.use('*endpoint', notFound);
