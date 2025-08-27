@@ -174,7 +174,7 @@ http://localhost:3000/api-docs
 ```
 https://minilemon-backend-skill-test.vercel.app/api/v1/
 ```
-Dokumentasi swagger (ui tidak dapat load di vercel)
+Dokumentasi swagger
 ```
-https://minilemon-backend-skill-test.vercel.app/api-docs.json
+https://minilemon-backend-skill-test.vercel.app/api-docs
 ```
