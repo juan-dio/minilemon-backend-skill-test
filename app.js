@@ -29,6 +29,7 @@ app.use('/api/v1/users', userRoute);
 
 // swagger documentation
 swaggerDocs(app, port);
+app.use('/api-docs-static', express.static(path.join(__dirname, '../node_modules/swagger-ui-dist')));
 
 // not found route
 app.use('*endpoint', notFound);
